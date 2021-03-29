@@ -2,8 +2,18 @@ const ingredients = ['Картошка', 'Грибы', 'Чеснок', 'Поми
 
 const listIngredientsRef = document.querySelector('ul');
 
-ingredients.forEach((el) => {
+const makeItemsInlistIngredientsRef = (value) => {
     const itemRef = document.createElement('li');
-    itemRef.textContent = el;
-    listIngredientsRef.append(itemRef);
-});
+    itemRef.textContent = value;
+
+    return listIngredientsRef.append(itemRef);
+};
+
+const elements = ingredients.map(makeItemsInlistIngredientsRef);
+
+//====================
+// ingredients.forEach((el) => {
+//     const itemRef = document.createElement('li');
+//     itemRef.textContent = el;
+//     listIngredientsRef.append(itemRef);
+// });
