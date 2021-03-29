@@ -1,14 +1,30 @@
-const products = [
-    { name: 'Asus', price: 1300, quantity: 4 },
-    { name: 'Huawei', price: 2700, quantity: 3 },
-    { name: 'HP', price: 400, quantity: 7 },
-    { name: 'Dell', price: 1200, quantity: 9 },
+const images = [
+    {
+        url:
+            'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        alt: 'White and Black Long Fur Cat',
+    },
+    {
+        url:
+            'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+    },
+    {
+        url:
+            'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        alt: 'Group of Horses Running',
+    },
 ];
-const getAllPropValues = (products, propName) => {
-    return products.reduce((acc, el) => {
-        if (el[propName] !== undefined) acc.push(el[propName]);
 
-        return acc;
-    }, []);
+const galleryRef = document.querySelector('#gallery');
+
+const makeGallery = ({ url, alt }) => {
+    const imageRef = document.createElement('img');
+
+    return galleryRef.insertAdjacentHTML(
+        'afterbegin',
+        `<li class="gallary__item"><img class="gallary__image" src="${(imageRef.src = url)}" alt="${(imageRef.alt = alt)}"></li>`,
+    );
 };
-console.log(getAllPropValues(products, 'name'));
+
+const elements = images.map(makeGallery);
