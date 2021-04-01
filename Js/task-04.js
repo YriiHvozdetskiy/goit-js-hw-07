@@ -1,29 +1,29 @@
 const refs = {
-    decrementRef: document.querySelector('button[data-action="decrement"]'),
-    incrementRef: document.querySelector('button[data-action="increment"]'),
-    counterValueRef: document.querySelector('#value'),
+    decrement: document.querySelector('button[data-action="decrement"]'),
+    increment: document.querySelector('button[data-action="increment"]'),
+    counterValue: document.querySelector('#value'),
 };
 
-refs.decrementRef.addEventListener('click', onDecrement);
-refs.incrementRef.addEventListener('click', onIncrement);
+refs.decrement.addEventListener('click', onDecrement);
+refs.increment.addEventListener('click', onIncrement);
 
-let counterValue = Number(refs.counterValueRef.textContent);
+let counterValue = Number(refs.counterValue.textContent);
 
 function onDecrement() {
-    counterValue = refs.counterValueRef.textContent = counterValue - -Number(refs.decrementRef.textContent);
+    counterValue = refs.counterValue.textContent = counterValue - -Number(refs.decrement.textContent);
 }
 
 function onIncrement() {
-    counterValue = refs.counterValueRef.textContent = counterValue + Number(refs.incrementRef.textContent);
+    counterValue = refs.counterValue.textContent = counterValue + Number(refs.increment.textContent);
 }
 
 //! ======== або так ==========
 // let counterValue = 0;
 
 // function onDecrement() {
-//     counterValue = refs.counterValueRef.textContent -= 1;
+//     counterValue = refs.counterValue.textContent -= 1;
 // }
 
 // function onIncrement() {
-//     counterValue = refs.counterValueRef.textContent = counterValue + 1;
+//     counterValue = refs.counterValue.textContent = counterValue + 1;
 // }

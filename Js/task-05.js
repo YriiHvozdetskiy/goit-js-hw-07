@@ -1,11 +1,11 @@
 const refs = {
-    inputTextRef: document.querySelector('#name-input'),
-    titleNameRef: document.querySelector('#name-output'),
+    inputText: document.querySelector('#name-input'),
+    titleName: document.querySelector('#name-output'),
 };
 
-refs.inputTextRef.addEventListener('input', onInputTextChenge);
+refs.inputText.addEventListener('input', onInputTextChenge);
 
 function onInputTextChenge(event) {
-    refs.titleNameRef.textContent = event.currentTarget.value;
-    if (event.currentTarget.value.trim() === '') refs.titleNameRef.textContent = 'незнакомец';
+    refs.titleName.textContent = event.currentTarget.value;
+    if (event.currentTarget.value.trim() === '') refs.titleName.textContent = 'незнакомец';
 }
