@@ -16,12 +16,14 @@ const images = [
     },
 ];
 
-const galleryRef = document.querySelector('#gallery');
+const refs = {
+    gallery: document.querySelector('#gallery'),
+};
 
 const makeGallery = ({ url, alt }) => {
     const imageRef = document.createElement('img');
 
-    return galleryRef.insertAdjacentHTML(
+    return refs.gallery.insertAdjacentHTML(
         'afterbegin',
         `<li class="gallary__item"><img class="gallary__image" src="${(imageRef.src = url)}" alt="${(imageRef.alt = alt)}"></li>`,
     );

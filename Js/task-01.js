@@ -1,8 +1,9 @@
-const listCategoriesRef = document.querySelector('#categories');
-
+const refs = {
+    listCategories: document.querySelector('#categories'),
+};
 const showlistCategoriesItems = (list) => `В списке ${list.children.length} категории.`;
 
-console.log(showlistCategoriesItems(listCategoriesRef));
+console.log(showlistCategoriesItems(refs.listCategories));
 
 const itemRef = document.querySelectorAll('.item');
 
