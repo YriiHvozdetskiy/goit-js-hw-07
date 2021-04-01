@@ -6,5 +6,8 @@ const refs = {
 refs.inputRange.addEventListener('input', onInputTextSize);
 
 function onInputTextSize() {
-    refs.text;
+    let rangeValue = refs.inputRange.value;
+    console.log(rangeValue);
+
+    refs.text.style.fontSize = `${rangeValue}px`;
 }

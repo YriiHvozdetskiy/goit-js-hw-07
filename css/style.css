@@ -9,6 +9,7 @@
 }
 .gallary__item:not(:first-child){
     margin-left: 10px;
+ 
 }
 
 #validation-input {
