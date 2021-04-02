@@ -8,8 +8,11 @@ const refs = {
 
 refs.renderBtn.addEventListener('click', createBoxes);
 refs.destroyBtn.addEventListener('click', onDestroy);
+// console.log(refs.input.value);
 
 function createBoxes(amount) {
+    console.log(refs.input.value);
+
     if (refs.boxes.children.length >= 1) {
         let elem = document.createElement('div');
         elem.classList.add('box');
