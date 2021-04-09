@@ -7,15 +7,10 @@ const refs = {
 const makeItemsInlistIngredientsRef = (value) => {
     const itemRef = document.createElement('li');
     itemRef.textContent = value;
-
-    return refs.listIngredients.append(itemRef);
+    return itemRef;
 };
 
 const elements = ingredients.map(makeItemsInlistIngredientsRef);
+console.log(elements);
 
-//====================
-// ingredients.forEach((el) => {
-//     const itemRef = document.createElement('li');
-//     itemRef.textContent = el;
-//     refs.listIngredients.append(itemRef);
-// });
+refs.listIngredients.append(...elements);
