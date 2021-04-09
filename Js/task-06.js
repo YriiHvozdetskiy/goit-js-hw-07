@@ -3,15 +3,25 @@ const refs = {
 };
 refs.inputText.addEventListener('blur', onFocusChange);
 
-const dataLength = refs.inputText.dataset.length;
+const dataLength = Number(refs.inputText.dataset.length);
+console.log(dataLength);
 
 function onFocusChange(event) {
+    //! Якщо замінити "<" на строге равенство буде не коректно код працювати
     if (event.currentTarget.value.trim().length < dataLength) {
-        refs.inputText.classList.remove('valid');
-        refs.inputText.classList.add('invalid');
+        invalidClass();
     }
     if (event.currentTarget.value.trim().length >= dataLength) {
-        refs.inputText.classList.remove('invalid');
-        refs.inputText.classList.add('valid');
+        validClass();
     }
+    // !Якщо зробити if else код не буде коректно працювати
+}
+
+function invalidClass() {
+    refs.inputText.classList.remove('valid');
+    refs.inputText.classList.add('invalid');
+}
+function validClass() {
+    refs.inputText.classList.remove('invalid');
+    refs.inputText.classList.add('valid');
 }
