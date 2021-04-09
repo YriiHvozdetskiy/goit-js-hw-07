@@ -8,34 +8,29 @@ const refs = {
 
 refs.renderBtn.addEventListener('click', createBoxes);
 refs.destroyBtn.addEventListener('click', onDestroy);
-// console.log(refs.input.value);
 
 function createBoxes(amount) {
-    console.log(refs.input.value);
-
-    if (refs.boxes.children.length >= 1) {
-        let elem = document.createElement('div');
-        elem.classList.add('box');
-        let counter = 10;
-        let widthNumber = Number.parseInt(refs.boxes.lastElementChild.style.width);
-        let heightNumber = Number.parseInt(refs.boxes.lastElementChild.style.width);
-
-        elem.style.width = widthNumber + counter + 'px';
-        elem.style.height = heightNumber + counter + 'px';
-
-        return refs.boxes.append(elem);
+    amount = refs.input.value;
+    for (let i = 0; i < amount; i += 1) {
+        const basicSize = 30;
+        const biggestSize = basicSize + i * 10;
+        const box = document.createElement('div');
+        box.setAttribute(
+            'style',
+            `width: ${biggestSize}px; height: ${biggestSize}px; background-color: ${randomRgb()}`,
+        );
+        boxes.append(box);
     }
-
-    let elem = document.createElement('div');
-    elem.classList.add('box');
-    elem.style.width = '30px';
-    elem.style.height = '30px';
-
-    return refs.boxes.append(elem);
 }
 
-function onDestroy() {
-    refs.boxes.remove();
+const randomRgb = () => {
+    const rgbNum = () => Math.floor(Math.random() * 256);
+    const r = rgbNum();
+    const g = rgbNum();
+    const b = rgbNum();
+    return `rgb(${r},${g},${b})`;
+};
 
-    refs.controls.insertAdjacentHTML('afterend', '<div id="boxes"></div>');
+function onDestroy() {
+    refs.boxes.innerHTML = '';
 }
