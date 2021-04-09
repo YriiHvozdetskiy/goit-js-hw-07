@@ -1,3 +1,5 @@
+html {width: 100%; overflow: hidden;}
+
 #gallery{
     list-style: none;
     display: flex;
@@ -23,10 +25,39 @@
   #validation-input.invalid {
     border-color: #f44336;
   }
+
+
+
   .box{
-    /* width: 30px;
-    height: 30px; */
-    /* background-color: green; */
-    margin-bottom: 10px;
-    
+   margin: 10px;
   }
+
+  .random{
+    position: absolute;
+
+    animation-name: move;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    }
+    
+    @keyframes move {
+      0% {
+        transform: translatex(0);
+        transform: rotate(0deg);
+      }
+    
+      50% {
+        transform: translatex(200px);
+        transform: translatey(100px);
+       
+      }
+    
+      100% {
+        transform: translatex(500px);
+        
+      }
+    }
+    
+  
