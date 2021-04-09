@@ -21,12 +21,8 @@ const refs = {
 };
 
 const makeGallery = ({ url, alt }) => {
-    const imageRef = document.createElement('img');
-
-    return refs.gallery.insertAdjacentHTML(
-        'afterbegin',
-        `<li class="gallary__item"><img class="gallary__image" src="${(imageRef.src = url)}" alt="${(imageRef.alt = alt)}"></li>`,
-    );
+    return `<li class="gallary__item"><img class="gallary__image" src="${url}" alt="${alt}"></li>`;
 };
 
-const elements = images.map(makeGallery);
+const elements = images.map(makeGallery).join('');
+refs.gallery.innerHTML = elements;

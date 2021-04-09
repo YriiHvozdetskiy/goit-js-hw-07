@@ -11,6 +11,5 @@ const makeItemsInlistIngredientsRef = (value) => {
 };
 
 const elements = ingredients.map(makeItemsInlistIngredientsRef);
-console.log(elements);
 
 refs.listIngredients.append(...elements);
