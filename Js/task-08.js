@@ -46,6 +46,7 @@ const randomRgb = () => {
 
 function onDestroy() {
     refs.boxes.innerHTML = '';
+    refs.input.value = '';
 }
 
 function onRendomPosition() {
