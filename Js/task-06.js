@@ -6,7 +6,7 @@ refs.inputText.addEventListener('blur', onFocusChange);
 const dataLength = Number(refs.inputText.dataset.length);
 
 function onFocusChange(event) {
-    if (event.target.value.length === dataLength) {
+    if (event.target.value.length >= dataLength) {
         updateClass('valid', 'invalid');
     } else {
         updateClass('invalid', 'valid');
