@@ -5,15 +5,6 @@ refs.inputText.addEventListener('blur', onFocusChange);
 
 const dataLength = Number(refs.inputText.dataset.length);
 
-function invalidClass() {
-    refs.inputText.classList.remove('valid');
-    refs.inputText.classList.add('invalid');
-}
-function validClass() {
-    refs.inputText.classList.remove('invalid');
-    refs.inputText.classList.add('valid');
-}
-
 function onFocusChange(event) {
     if (event.target.value.length === dataLength) {
         updateClass('valid', 'invalid');
@@ -28,6 +19,15 @@ function updateClass(addClass, remClass) {
 }
 
 // ==== моє рішення
+
+// function invalidClass() {
+//     refs.inputText.classList.remove('valid');
+//     refs.inputText.classList.add('invalid');
+// }
+// function validClass() {
+//     refs.inputText.classList.remove('invalid');
+//     refs.inputText.classList.add('valid');
+// }
 
 // function onFocusChange(event) {
 //     //! Якщо замінити "<" на строге равенство буде не коректно код працювати
